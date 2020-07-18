@@ -32,7 +32,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * -@Qualifier   限定符，限定bean
      */
-    @Qualifier("inMemoryUserDetailsManager")
     @Autowired
     private UserDetailsService userDetailsService;
 
