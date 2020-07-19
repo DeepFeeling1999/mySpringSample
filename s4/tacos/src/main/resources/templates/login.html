@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:th="http://www.thymeleaf.org">
   <head>
+    <meta charset="UTF-8">
     <title>Taco Cloud</title>
   </head>
   
@@ -10,19 +11,19 @@
     <img th:src="@{/images/TacoCloud.png}"/>
     
     <div th:if="${error}"> 
-      Unable to login. Check your username and password.
+      无法登入. 检查你的用户名和密码！
     </div>
     
-    <p>New here? Click 
-       <a th:href="@{/register}">here</a> to register.</p>
+    <p>新用户? 点这里
+       <a th:href="@{/register}">注册</a> 账户.</p>
     
     <!-- tag::thAction[] -->
     <form method="POST" th:action="@{/login}" id="loginForm">
     <!-- end::thAction[] -->
-      <label for="username">Username: </label>
+      <label for="username">用户名: </label>
       <input type="text" name="username" id="username" /><br/>
       
-      <label for="password">Password: </label>
+      <label for="password">密码: </label>
       <input type="password" name="password" id="password" /><br/>
       
       <input type="submit" value="Login"/>

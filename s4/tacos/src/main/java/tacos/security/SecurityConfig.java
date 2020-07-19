@@ -31,21 +31,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * -@Qualifier   限定符，限定bean
+     * 后面直接注入
      */
     @Autowired
     private UserDetailsService userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/design", "/orders")
-                .access("hasRole('ROLE_USER')")
-                .antMatchers("/",
-                                                                                                              "/**"
-        ).access("permitAll")
-                //end::authorizeRequests[]
+        http.authorizeRequests()
+                //只有具备ROLE_USER权限的用户才可以访问/design和/orders
+                .antMatchers("/design", "/orders").access("hasRole('ROLE_USER')")
 
+                //其他的请求允许所有用户访问
+                //规则顺序很重要，前面的安全声明要比后面更高优先级，
+                //此处如果交换，则对/design和/orders的设定失效
+                .antMatchers("/", "/**").access("permitAll")
+
+
+                //设置自定义登入页的路径
                 .and().formLogin().loginPage("/login")
-                //end::customLoginPage[]
+
 
                 // tag::enableLogout[]
                 .and().logout().logoutSuccessUrl("/")
@@ -58,31 +63,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // Allow pages to be loaded in frames from the same origin; needed for H2-Console
                 // tag::frameOptionsSameOrigin[]
-                .and().headers().frameOptions().sameOrigin()
-        // end::frameOptionsSameOrigin[]
-
-        //tag::authorizeRequests[]
-        //tag::customLoginPage[]
-        ;
+                .and().headers().frameOptions().sameOrigin();
     }
-    //end::configureHttpSecurity[]
-    //end::authorizeRequests[]
-    //end::customLoginPage[]
 
   /*
-  //tag::customUserDetailsService[]
   @Override
   protected void configure(AuthenticationManagerBuilder auth)
       throws Exception {
 
     auth
       .userDetailsService(userDetailsService);
-    
   }
-  //end::customUserDetailsService[]
-  
-   */
+  */
 
+    /**
+     * 带有@bean注解，对encoder()的任何调用都会被拦截，并且返回应用上下文中的bean实例
+     *
+     * @return 返回实例
+     */
     @Bean
     public PasswordEncoder encoder() {
         return new Pbkdf2PasswordEncoder("53cr3t");
@@ -93,8 +91,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
+        //调用userDetailsService()方法，并自动装配userDetailsService
+        //将前面的bean注入到用户详情服务中
         auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
-
     }
 
 /*
@@ -156,14 +155,15 @@ jdbc  基本配置示例
         .userSearchBase("ou=people")    //声明为在people的组织单元下搜索，而不是在默认的根开始
         .userSearchFilter("(uid={0})")
         .groupSearchBase("ou=groups")
-        .groupSearchFilter("member={0}");
+        .groupSearchFilter("member={0}")
         .passwordCompare()              //进行密码比对进行认证
 
         .passwordEncode(new BCryptPasswordEncoder())
         .passwordAttribute("passcode")  //比对passcode属性，默认是比对LDAP条目中的userPassword属性
-        .contextSource()
+        .contextSource()                //通过返回的ContextSourceBuilder调用url方法来指定ldap服务器地址
+                                        //默认是监听本机的33389端口
         .url("ldap://tacocloud.com:389/dc=tacocloud,dc=com");
+        .root("dc=tacocloud,dc=com"); //嵌入式LDAP服务器
   }
 */
-
 }

@@ -14,6 +14,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * -@Entity注解，表明是实体类，与@Id一起使用
+ *
+ * 实现了Spring Security 的UserDetails接口，可以给框架提供各种信息
+ */
 @Entity
 @Data
 @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
@@ -40,6 +45,10 @@ public class User implements UserDetails {
     return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
   }
 
+
+  /**
+   * 各种方法返回一个boolean值，表明账号是否可用或过期
+   */
   @Override
   public boolean isAccountNonExpired() {
     return true;

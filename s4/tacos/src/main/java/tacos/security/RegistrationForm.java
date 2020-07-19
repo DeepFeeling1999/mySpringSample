@@ -3,6 +3,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import lombok.Data;
 import tacos.User;
 
+/**
+ * -@Data lombok提供，可自动生成get，set，toString，hashCode等方法
+ * @author dell
+ */
 @Data
 public class RegistrationForm {
 
