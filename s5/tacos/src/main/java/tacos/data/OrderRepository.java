@@ -11,15 +11,9 @@ import tacos.User;
 public interface OrderRepository 
          extends CrudRepository<Order, Long> {
 
-  // tag::findByUser_paged[]
+
   List<Order> findByUserOrderByPlacedAtDesc(
           User user, Pageable pageable);
-  // end::findByUser_paged[]
 
-  /*
-  // tag::findByUser[]
-  List<Order> findByUserOrderByPlacedAtDesc(User user);
-  // end::findByUser[]
-   */
 
 }

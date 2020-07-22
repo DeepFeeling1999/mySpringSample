@@ -3,7 +3,6 @@
 #    user:
 #      name: buzz
 #      password: infinity
-
 taco:
   orders:
     pageSize: 10
@@ -11,18 +10,35 @@ taco:
 
   discount:
     codes:
-      abcdef: 10
-    
+     abcdef: 10
+
+
+  #logging: path 设置目录，会在该目录下创建 spring.log 文件，并写入日志内容
+  #logging: file 会在当前目录下创建对应名称的日志文件
+
+  #如果只配置logging.file 会在当前路径下生成一个xxx.log文件
+  #如果只配置logging.path 会在对应路径下生成一个spring.log文件
+  #二者不能同时使用，同时使用则只有logging.file生效
+logging:
+  file: D:/MyLog/DLog.log #配置输出文件，可以是绝对路径或者相对路径
+  level:
+    root: info
+    org:
+      springframework:
+        security: DEBUG
+
+#server:
+#  port: 0    任选一个可用端口，确保不会冲突
+
 ---
 spring:
   profiles: prod
-  
+
   datasource:
     url: jdbc:mysql://localhost/tacocloud
     username: tacouser
     password: tacopassword
-    
+
 logging:
   level:
     tacos: WARN
-    
