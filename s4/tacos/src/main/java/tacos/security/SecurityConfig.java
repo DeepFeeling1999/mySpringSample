@@ -17,7 +17,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 
 /**
@@ -52,9 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().formLogin().loginPage("/login")
 
 
-                // tag::enableLogout[]
+                //登出成功后会回到主页
                 .and().logout().logoutSuccessUrl("/")
-                // end::enableLogout[]
 
                 // Make H2-Console non-secured; for debug purposes
                 // tag::csrfIgnore[]

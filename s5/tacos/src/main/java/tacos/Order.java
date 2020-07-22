@@ -32,14 +32,11 @@ public class Order implements Serializable {
   private Long id;
   
   private Date placedAt;
-
-  /**
-   * 此注解表明一个订单属于一个用户，一个用户可以有多个订单
-   */
+  
   @ManyToOne
   private User user;
   
-  @NotBlank(message="请填写收货地址")
+  @NotBlank(message="Delivery name is required")
   private String deliveryName;
   
   @NotBlank(message="Street is required")
