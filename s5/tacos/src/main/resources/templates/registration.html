@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:th="http://www.thymeleaf.org">
   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Taco Cloud</title>
   </head>
   
@@ -11,31 +12,31 @@
     
     <form method="POST" th:action="@{/register}" id="registerForm">
     
-        <label for="username">Username: </label>
+        <label for="username">用户名: </label>
         <input type="text" name="username"/><br/>
 
-        <label for="password">Password: </label>
+        <label for="password">密码: </label>
         <input type="password" name="password"/><br/>
 
-        <label for="confirm">Confirm password: </label>
+        <label for="confirm">确定密码: </label>
         <input type="password" name="confirm"/><br/>
 
-        <label for="fullname">Full name: </label>
+        <label for="fullname">全名: </label>
         <input type="text" name="fullname"/><br/>
     
-        <label for="street">Street: </label>
+        <label for="street">街道: </label>
         <input type="text" name="street"/><br/>
     
-        <label for="city">City: </label>
+        <label for="city">城市: </label>
         <input type="text" name="city"/><br/>
     
-        <label for="state">State: </label>
+        <label for="state">国家: </label>
         <input type="text" name="state"/><br/>
     
-        <label for="zip">Zip: </label>
+        <label for="zip">邮编: </label>
         <input type="text" name="zip"/><br/>
     
-        <label for="phone">Phone: </label>
+        <label for="phone">电话号码: </label>
         <input type="text" name="phone"/><br/>
     
         <input type="submit" value="Register"/>

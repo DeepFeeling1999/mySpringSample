@@ -9,8 +9,12 @@ public class WebConfig implements WebMvcConfigurer {
 
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
+    //视图控制器，设置视图名
     registry.addViewController("/").setViewName("home");
-    registry.addViewController("/login").setViewName("login");
+    registry.addViewController("/abc").setViewName("home");
+
+    //声明登入页面的视图控制器
+    registry.addViewController("/login");
   }
 
 }

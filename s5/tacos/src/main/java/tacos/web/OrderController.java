@@ -18,29 +18,22 @@ import tacos.Order;
 import tacos.User;
 import tacos.data.OrderRepository;
 
-// tag::OrderController_base[]
-
 @Controller
 @RequestMapping("/orders")
 @SessionAttributes("order")
 public class OrderController {
 
+  /**
+   * 存储组件和配置信息组件
+   */
   private OrderRepository orderRepo;
-
-//end::OrderController_base[]
-
-  // tag::ordersForUser_paged_withHolder[]
   private OrderProps props;
-
-  public OrderController(OrderRepository orderRepo,
-          OrderProps props) {
+  public OrderController(OrderRepository orderRepo) {
     this.orderRepo = orderRepo;
-    this.props = props;
   }
-  // end::ordersForUser_paged_withHolder[]
-
+  
   @GetMapping("/current")
-  public String orderForm(@AuthenticationPrincipal User user,
+  public String orderForm(@AuthenticationPrincipal User user, 
       @ModelAttribute Order order) {
     if (order.getDeliveryName() == null) {
       order.setDeliveryName(user.getFullname());
@@ -57,90 +50,32 @@ public class OrderController {
     if (order.getDeliveryZip() == null) {
       order.setDeliveryZip(user.getZip());
     }
-
+    
     return "orderForm";
   }
 
   @PostMapping
-  public String processOrder(@Valid Order order, Errors errors,
-      SessionStatus sessionStatus,
+  public String processOrder(@Valid Order order, Errors errors, 
+      SessionStatus sessionStatus, 
       @AuthenticationPrincipal User user) {
-
+    
     if (errors.hasErrors()) {
       return "orderForm";
     }
-
+    
     order.setUser(user);
-
+    
     orderRepo.save(order);
     sessionStatus.setComplete();
-
+    
     return "redirect:/";
   }
 
-  /*
-  //tag::ordersForUser_paged_withHolder[]
-
-    ...
-
-  //end::ordersForUser_paged_withHolder[]
-  
-   */
-
-  // tag::ordersForUser_paged_withHolder[]
   @GetMapping
   public String ordersForUser(
-      @AuthenticationPrincipal User user, Model model) {
-
-    Pageable pageable = PageRequest.of(0, props.getPageSize());
-    model.addAttribute("orders",
-        orderRepo.findByUserOrderByPlacedAtDesc(user, pageable));
-
+          @AuthenticationPrincipal User user, Model model){
+    Pageable pageable= PageRequest.of(0,props.getPageSize());
+    model.addAttribute("orders",orderRepo.findByUserOrderByPlacedAtDesc(user,pageable));
     return "orderList";
   }
-  // end::ordersForUser_paged_withHolder[]
-
-  /*
-  // tag::ordersForUser_paged[]
-  @GetMapping
-  public String ordersForUser(
-      @AuthenticationPrincipal User user, Model model) {
-
-    Pageable pageable = PageRequest.of(0, 20);
-    model.addAttribute("orders",
-        orderRepo.findByUserOrderByPlacedAtDesc(user, pageable));
-
-    return "orderList";
-  }
-  // end::ordersForUser_paged[]
-
-   */
-
-  /*
-  // tag::ordersForUser[]
-  @GetMapping
-  public String ordersForUser(
-      @AuthenticationPrincipal User user, Model model) {
-
-    model.addAttribute("orders",
-        orderRepo.findByUserOrderByPlacedAtDesc(user));
-
-    return "orderList";
-  }
-  // end::ordersForUser[]
-
-   */
-
-  /*
-  //tag::OrderController_base[]
-
-    ...
-
-  //end::OrderController_base[]
-
-   */
-
-
-//tag::OrderController_base[]
 }
-//end::OrderController_base[]
