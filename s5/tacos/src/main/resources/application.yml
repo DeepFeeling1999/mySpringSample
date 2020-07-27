@@ -20,7 +20,7 @@ logging:
 
 #server:
 server:
-  port: 9090
+  port: 8080
 #  port: 0    任选一个可用端口，确保不会冲突
 
 
