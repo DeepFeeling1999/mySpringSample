@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--声明student对象
+    注入：就是赋值的意思
+    简单类型：spring中规定java的基本数据类型和string都是简单类型
+    di：给属性赋值
+    1：set注入（设值注入）
+        简单类型的set注入
+        <bean id ="xx" class="yyy">
+            <property name="属性名字" value="属性的值">
+            一个property只能给一个属性赋值
+            <property...>
+        </bean>
+
+
+
+    1.2:引用类型的set注入 ：也是调用set方法
+        <bean id="xxx" class="yyy">
+            <property name="属性名称" ref="bean 的id(对应对象的id)">
+        <bean/>
+
+
+    2:构造注入：spring 调用类的有参数的构造方法
+    一个<constructor -arg>表示构造方法的一个参数
+    <constructor -arg>标签属性
+        name:表示构造方法的形参名
+        index：表示构造方法的参数位置。从左到右是0，1，2
+        value：简单类型的值
+        ref：引用
+    -->
+    <!--使用index属性的构造注入-->
+    <!--省略index需要按顺序-->
+    <bean id="Student" class="org.example.ba03.Student">
+        <constructor-arg index="2" ref="mySchool"/>
+        <constructor-arg index="0" value="666"/>
+        <constructor-arg index="1" value="777"/>
+    </bean>
+    <bean id="Student2" class="org.example.ba03.Student">
+        <constructor-arg name="age" value="999"/>
+        <constructor-arg name="name" value="999"/>
+        <constructor-arg name="school" ref="mySchool2"/>
+    </bean>
+
+
+    <bean id="mySchool" class="org.example.ba03.School">
+        <property name="address" value="北京"/>
+        <property name="school" value="北京大学"/>
+    </bean>
+    <bean id="mySchool2" class="org.example.ba03.School">
+        <property name="address" value="京"/>
+        <property name="school" value="北京大学"/>
+    </bean>
+
+    <bean id="myFile" class="java.io.File">
+        <constructor-arg name="pathname" value="src//readme.txt"/>
+    </bean>
+
+</beans>

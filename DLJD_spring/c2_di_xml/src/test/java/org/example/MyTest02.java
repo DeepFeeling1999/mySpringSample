@@ -1,13 +1,14 @@
 package org.example;
 
-import org.example.ba01.Student;
+
+import org.example.ba02.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
 
-public class MyTest {
+public class MyTest02 {
     /**
      * spring 默认创建对象的时间，是在创建spring容器时
      * 会创建容器时，创建配置文件中的所有的对象
@@ -41,5 +42,16 @@ public class MyTest {
 
     }
 
+    @Test
+    public void test02(){
+        System.out.println("02");
+        String config="ba02/applicationContext.xml";
+        ApplicationContext ac=new ClassPathXmlApplicationContext(config);
+
+        Student student= (Student) ac.getBean("myStudent");
+
+        System.out.println(student);
+    }
 
 }
+
