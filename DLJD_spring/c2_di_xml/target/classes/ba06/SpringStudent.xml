@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myStudent" class="org.example.ba06.Student" autowire="byName">
+        <property name="name" value="李四"/><!-- set方法-->
+        <property name="age" value="333333"/><!--xml规定，不管是什么类型，都要有""括起来-->
+        <!--引用类型-->
+        <!--<property name="school" ref="mySchool"/>-setSchool传入School引用-->
+    </bean>
+
+</beans>

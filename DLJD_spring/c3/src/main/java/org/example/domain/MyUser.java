@@ -8,6 +8,10 @@ import java.util.Date;
 public class MyUser {
     private String string;
     private Date date;
+
+    public MyUser(){
+        System.out.println("00000");
+    }
     public MyUser(String string,Date date){
         this.date=date;
         this.string=string;

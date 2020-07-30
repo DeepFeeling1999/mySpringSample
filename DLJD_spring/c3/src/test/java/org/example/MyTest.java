@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Date;
+
 public class MyTest {
     /**
      * spring 默认创建对象的时间，是在创建spring容器时
@@ -20,6 +22,7 @@ public class MyTest {
         //表示从类
         ApplicationContext ac=new ClassPathXmlApplicationContext(myConfig);
 
+        Date date=new Date();
         //从容器中获取某个对象，要调用对象的方法
         //getBean("配置中的bean的id值")
         //someService service=(someService) ac.getBean("b1");

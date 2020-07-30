@@ -1,6 +1,7 @@
-package org.example.dao.repositoryimp;
+package org.example.dao.repositoryimpl;
 
 import org.example.dao.MyRepository;
+import org.example.domain.MyUser;
 
 /**
  * @author dell
@@ -8,7 +9,8 @@ import org.example.dao.MyRepository;
 public class RepositoryImplement implements MyRepository {
 
     @Override
-    public void saveRepository() {
+    public void saveRepository(MyUser myUser) {
+        System.out.println(myUser);
         System.out.println("saveRepository successfully");
     }
 }

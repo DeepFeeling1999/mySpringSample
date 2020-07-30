@@ -4,18 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--存储库bean-->
-    <bean id="bRepository" class="org.example.dao.repositoryimp.RepositoryImplement"/>
+    <bean id="bRepository" class="org.example.dao.repositoryimpl.RepositoryImplement"/>
+    <bean id="b1Repository" class="org.example.dao.repositoryimpl.OracleDao"/>
 
     <!--用户类-->
+    <!--是先创建对象，然后调用set-->
     <bean id="bUser" class="org.example.domain.MyUser">
-        <constructor-arg name="string" value="666"/>
-        <constructor-arg name="date" ref="bDate"/>
+        <property name="date" ref="bDate"/>
+        <property name="string" value="666"/>
     </bean>
+
     <!--用户日期类-->
     <bean id="bDate" class="java.util.Date"/>
 
     <!--服务bean-->
-    <bean id="bService" class="org.example.service.imp.UserServiceImp"/>
+    <bean id="bService" class="org.example.service.imp.UserServiceImpl">
+        <property name="userRepositoryImplement" ref="b1Repository"/>
+    </bean>
 
 
 </beans>
