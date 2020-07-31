@@ -1,7 +1,7 @@
 package org.example;
 
 
-import org.example.ba03.Student;
+import org.example.ba02.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

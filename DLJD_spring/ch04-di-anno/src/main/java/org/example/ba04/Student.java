@@ -1,6 +1,7 @@
-package org.example.ba03;
+package org.example.ba04;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,16 +17,14 @@ public class Student {
 
     /**
      * 默认使用byType
-     * 属性
-     * （默认）required=true：（默认）表示引用类型赋值失败，程序报错，并终止
-     *  required=false：引用类型如果赋值失败不报错，会是null
-     *
+     * 此处是byName
      */
     @Autowired
+    @Qualifier("sschool")
     private School school;
 
     public Student(){
-        System.out.println(this.toString());
+        System.out.println("执行构造方法");
         System.out.println("888");
         name="999";
         age=999;

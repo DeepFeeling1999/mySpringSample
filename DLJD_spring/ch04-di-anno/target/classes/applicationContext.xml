@@ -18,4 +18,8 @@
     -->
 
 
+
+    <!--加载属性配置文件-->
+    <context:property-placeholder location="classpath:test.properties"/>
+
 </beans>
