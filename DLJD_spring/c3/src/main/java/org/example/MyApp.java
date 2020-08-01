@@ -13,12 +13,12 @@ public class MyApp {
     public static void main(String[]args){
         String config="applicationContext.xml";
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext(config);
-        MyUser myUser= (MyUser) applicationContext.getBean("bUser");
+        MyUser myUser= (MyUser) applicationContext.getBean("myUser");
         System.out.println(myUser);
         System.out.println("********************");
 
 
-        MyUserService myUserService= (MyUserService) applicationContext.getBean("bService");
+        MyUserService myUserService= (MyUserService) applicationContext.getBean("userService");
         myUserService.userService(myUser);
 
         //RepositoryImplement repositoryImplement= (RepositoryImplement) applicationContext.getBean("bRepository");

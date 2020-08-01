@@ -5,7 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/c1.iml" filepath="$PROJECT_DIR$/c1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c2_di_xml/c2_di_xml.iml" filepath="$PROJECT_DIR$/../c2_di_xml/c2_di_xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c3/c3.iml" filepath="$PROJECT_DIR$/../c3/c3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../ch04-di-anno/ch04-di-anno.iml" filepath="$PROJECT_DIR$/../ch04-di-anno/ch04-di-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../c5/c5.iml" filepath="$PROJECT_DIR$/../c5/c5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../c4-di-anno/ch04-di-anno.iml" filepath="$PROJECT_DIR$/../c4-di-anno/ch04-di-anno.iml" />
     </modules>
   </component>
 </project>
