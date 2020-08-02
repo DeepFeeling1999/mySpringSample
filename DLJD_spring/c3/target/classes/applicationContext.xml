@@ -4,6 +4,25 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!--    &lt;!&ndash;存储库bean&ndash;&gt;-->
+<!--    <bean id="bRepository" class="org.example.dao.repositoryimpl.RepositoryImplement"/>-->
+<!--    <bean id="b1Repository" class="org.example.dao.repositoryimpl.OracleDao"/>-->
+
+<!--    &lt;!&ndash;用户类&ndash;&gt;-->
+<!--    &lt;!&ndash;是先创建对象，然后调用set&ndash;&gt;-->
+<!--    <bean id="bUser" class="org.example.domain.MyUser">-->
+<!--        <property name="date" ref="bDate"/>-->
+<!--        <property name="string" value="666"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;用户日期类&ndash;&gt;-->
+<!--    <bean id="bDate" class="java.util.Date"/>-->
+
+<!--    &lt;!&ndash;服务bean&ndash;&gt;-->
+<!--    <bean id="bService" class="org.example.service.imp.UserServiceImpl">-->
+<!--        <property name="userRepositoryImplement" ref="b1Repository"/>-->
+<!--    </bean>-->
+<!--    &ndash;&gt;-->
 
     <context:component-scan base-package="org.example"/>
 </beans>

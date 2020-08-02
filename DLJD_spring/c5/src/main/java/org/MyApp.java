@@ -19,6 +19,8 @@ public class MyApp {
         SomeService proxy = (SomeService) Proxy.newProxyInstance(someService.getClass().getClassLoader(),
                                                                  someService.getClass().getInterfaces(),
                                                                  invocationHandler);
+
+        System.out.println(proxy.getClass().getName());
         proxy.doSome();
         System.out.println("**************");
         proxy.doOther();
