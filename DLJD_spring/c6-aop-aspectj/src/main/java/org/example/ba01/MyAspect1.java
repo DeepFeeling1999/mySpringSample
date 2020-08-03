@@ -1,5 +1,6 @@
 package org.example.ba01;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -46,14 +47,29 @@ public class MyAspect1 {
     //    System.out.println("1目标方法执行之前输出时间+"+new Date());
     //}
 
+    /**
+     * 指定通知方法中的参数：JoinPoint
+     * @param jp
+     * JoinPoint是业务方法，要加入切面功能的业务方法
+     * 作用是可以在通知方法中获取方法执行时的信息，例如方法名，方法的实参
+     * 如果在切面中需要用到方法的信息，就可以加入JoinPoint
+     * 这个JoinPoint参数的值是由框架赋予，必须是第一个位置的参数
+     *
+     */
     @Before(value="execution(void *..SomeServiceImpl.doSome(String,Integer))")
-    public void myBefore(){
+    public void myBefore(JoinPoint jp){
+        //可以获取方法的完整定义
+        System.out.println("方法的签名"+jp.getSignature());
+        System.out.println("方法的名称"+jp.getSignature().getName());
+
+        //获得实参
+        Object[] args=jp.getArgs();
+        for(Object arg:args){
+            System.out.println(arg);
+        }
+
         //功能
         System.out.println("目标方法执行之前输出时间+"+new Date());
     }
-    @Before(value="execution(void *..SomeServiceImpl.doSome(String,Integer))")
-    public void mmyBefore(){
-        //功能
-        System.out.println("目标方法执行之前输出时间+"+new Date());
-    }
+
 }
