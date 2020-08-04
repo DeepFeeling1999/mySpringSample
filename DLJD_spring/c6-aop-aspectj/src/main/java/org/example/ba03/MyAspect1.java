@@ -1,14 +1,11 @@
 package org.example.ba03;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.example.ba02.Student;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
 /**
  * Aspect中的注解
  * 表示当前类是切面类
@@ -25,7 +22,7 @@ public class MyAspect1 {
      * 1：公共方法 public
      * 2：必须有一个返回值
      * 3：方法名称自定义
-     * 4：方法有参数,推荐是Object,参数名自定义
+     * 4：方法有参数
      *
      * 特点
      * 是功能最强的通知

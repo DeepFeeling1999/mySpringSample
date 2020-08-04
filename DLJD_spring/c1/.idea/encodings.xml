@@ -10,5 +10,7 @@
     <file url="file://$PROJECT_DIR$/../c4-di-anno/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../c4-di-anno/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../c6-aop-aspectj/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../c6-aop-aspectj/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../c7-spring-mybatis/src/main/java" charset="UTF-8" />
   </component>
 </project>

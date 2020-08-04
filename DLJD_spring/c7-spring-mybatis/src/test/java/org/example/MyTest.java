@@ -1,20 +1,18 @@
 package org.example;
 
-import org.example.ba05.someService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class MyTest05 {
+public class MyTest {
     @Test
-    public void test05(){
+    public void test01(){
         String config="applicationContext.xml";
         ApplicationContext ac=new ClassPathXmlApplicationContext(config);
-        someService someService= (someService) ac.getBean("someServiceImpl");
 
-        System.out.println(someService.getClass().getName());
-
-        someService.doThird();
-
+        String []names=ac.getBeanDefinitionNames();
+        for(String name:names){
+            System.out.println("容器中的对象名+"+name);
+        }
     }
 }

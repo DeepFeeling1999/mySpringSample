@@ -1,13 +1,13 @@
 package org.example;
 
-import org.example.ba05.someService;
+import org.example.ba08.someService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class MyTest05 {
+public class MyTest08 {
     @Test
-    public void test05(){
+    public void test06(){
         String config="applicationContext.xml";
         ApplicationContext ac=new ClassPathXmlApplicationContext(config);
         someService someService= (someService) ac.getBean("someServiceImpl");

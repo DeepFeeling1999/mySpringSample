@@ -7,7 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="c3" />
-        <module name="ch04-di-anno" />
+        <module name="c7-spring-mybatis" />
+        <module name="c4-di-anno" />
         <module name="c1" />
         <module name="c2_di_xml" />
         <module name="c6-aop-aspect" />
@@ -17,9 +18,10 @@
       <module name="c1" target="1.8" />
       <module name="c2_di_xml" target="1.8" />
       <module name="c3" target="1.8" />
+      <module name="c4-di-anno" target="1.8" />
       <module name="c6-aop-aspect" target="1.8" />
       <module name="c6-aop-aspectj" target="1.5" />
-      <module name="ch04-di-anno" target="1.8" />
+      <module name="c7-spring-mybatis" target="1.8" />
       <module name="ch04-di-anno (1)" target="1.8" />
       <module name="ch04-di-anno (2)" target="1.8" />
     </bytecodeTargetLevel>
