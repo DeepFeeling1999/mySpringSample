@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>c7-spring-mybatis</artifactId>
+    <artifactId>c8-spring-trans</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>c7-spring-mybatis</name>
+    <name>c8-spring-trans</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -18,7 +18,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+
     <dependencies>
+        <!--单元测试-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -26,14 +28,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!--spring核心ioc-->
+        <!--spring 核心依赖-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.6.RELEASE</version>
         </dependency>
 
-        <!--这两个是做事务用到的-->
+        <!--做事务用到的依赖-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -51,41 +53,29 @@
             <artifactId>mybatis</artifactId>
             <version>3.5.1</version>
         </dependency>
-        <!--mybatis和spring集成-->
+        <!--mybatis集成spring依赖-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>1.3.1</version>
         </dependency>
 
-        <!--jdbc对MySQL的jar-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
-        </dependency>
-        <!--druid连接池依赖-->
+        <!--druid链接池依赖-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.1.23</version>
         </dependency>
+
+        <!--mysql 对java的-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.16</version>
+        </dependency>
     </dependencies>
 
-
     <build>
-        <!--目的是吧src/main/java目录中的xml文件包含到输出结果中。输出到classes目录中-->
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-        </resources>
-
         <!--指定jdk版本-->
         <plugins>
             <plugin>

@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/../c5/c5.iml" filepath="$PROJECT_DIR$/../c5/c5.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c6-aop-aspectj/c6-aop-aspect.iml" filepath="$PROJECT_DIR$/../c6-aop-aspectj/c6-aop-aspect.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c7-spring-mybatis/c7-spring-mybatis.iml" filepath="$PROJECT_DIR$/../c7-spring-mybatis/c7-spring-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../c8-spring-trans/c8-spring-trans.iml" filepath="$PROJECT_DIR$/../c8-spring-trans/c8-spring-trans.iml" />
     </modules>
   </component>
 </project>

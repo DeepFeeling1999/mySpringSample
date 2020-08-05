@@ -6,6 +6,9 @@ import org.example.service.StudentService;
 
 import java.util.List;
 
+/**
+ * @author dell
+ */
 public class StudentServiceImpl implements StudentService {
     private StudentDao studentDao;
 
@@ -15,13 +18,11 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public int addStudent(Student student) {
-        int nums = studentDao.insetStudent(student);
-        return nums;
+        return studentDao.insetStudent(student);
     }
 
     @Override
     public List<Student> queryStudent() {
-        List<Student> students = studentDao.selectStudents();
-        return students;
+        return studentDao.selectStudents();
     }
 }

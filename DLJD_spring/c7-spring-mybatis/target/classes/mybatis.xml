@@ -16,9 +16,7 @@
 
     <!--sql mapper （sql 映射文件）的位置-->
     <mappers>
-        <!--
-        name 是包名，这个包中的所有mapper.xml一次都能加载
-        -->
+        <!--name 是包名，这个包中的所有mapper.xml一次都能加载-->
         <package name="org.example.dao"/>
     </mappers>
 </configuration>
