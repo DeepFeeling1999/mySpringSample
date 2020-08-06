@@ -2,13 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 把数据库的配置信息，写在一个独立的文件，编译修改数据库的配置内容
     让spring知道jdbc.properties文件的位置-->
     <context:property-placeholder location="classpath:mybatis.properties"/>
-
-
+    
     <!--
         声明数据源，用来链接数据库
         后面的属性都是class="com.alibaba.druid.pool.DruidDataSource"
@@ -46,12 +48,12 @@
         MapperScannerConfigurer会扫描这个包中的所有接口，把每个接口都执行
         一次getMapper()方法，得到每个接口的dao对象。
         创建好的dao对象放入到spring 容器中
-        默认名称是接口的首字母小写
         -->
         <property name="basePackage" value="org.example.dao"/>
     </bean>
 
     <bean id="studentService" class="org.example.service.impl.StudentServiceImpl">
+        <!--默认名称是接口的首字母小写,所以这里的ref是studentDao-->
         <property name="studentDao" ref="studentDao"/>
     </bean>
 </beans>

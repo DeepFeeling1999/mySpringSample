@@ -23,6 +23,7 @@
       <module name="c6-aop-aspect" target="1.8" />
       <module name="c6-aop-aspectj" target="1.5" />
       <module name="c7-spring-mybatis" target="1.8" />
+      <module name="c7-spring-mybatis (1)" target="1.8" />
       <module name="c8-spring-trans" target="1.8" />
       <module name="ch04-di-anno (1)" target="1.8" />
       <module name="ch04-di-anno (2)" target="1.8" />
