@@ -7,7 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="c3" />
+        <module name="c10-spring-trans-aspectj" />
         <module name="c2_di_xml" />
+        <module name="c9-spring-trans-anno" />
         <module name="c7-spring-mybatis" />
         <module name="c4-di-anno" />
         <module name="c8-spring-trans" />
@@ -16,7 +18,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="c-spring-trans-anno" target="1.8" />
       <module name="c1" target="1.8" />
+      <module name="c10-spring-trans-aspectj" target="1.8" />
       <module name="c2_di_xml" target="1.8" />
       <module name="c3" target="1.8" />
       <module name="c4-di-anno" target="1.8" />
@@ -25,6 +29,8 @@
       <module name="c7-spring-mybatis" target="1.8" />
       <module name="c7-spring-mybatis (1)" target="1.8" />
       <module name="c8-spring-trans" target="1.8" />
+      <module name="c8-spring-trans (1)" target="1.8" />
+      <module name="c9-spring-trans-anno" target="1.8" />
       <module name="ch04-di-anno (1)" target="1.8" />
       <module name="ch04-di-anno (2)" target="1.8" />
     </bytecodeTargetLevel>

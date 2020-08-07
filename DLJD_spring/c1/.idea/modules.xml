@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/c1.iml" filepath="$PROJECT_DIR$/c1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../c10-spring-trans-aspectj/c10-spring-trans-aspectj.iml" filepath="$PROJECT_DIR$/../c10-spring-trans-aspectj/c10-spring-trans-aspectj.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c2_di_xml/c2_di_xml.iml" filepath="$PROJECT_DIR$/../c2_di_xml/c2_di_xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c3/c3.iml" filepath="$PROJECT_DIR$/../c3/c3.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c4-di-anno/c4-di-anno.iml" filepath="$PROJECT_DIR$/../c4-di-anno/c4-di-anno.iml" />
@@ -10,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/../c6-aop-aspectj/c6-aop-aspect.iml" filepath="$PROJECT_DIR$/../c6-aop-aspectj/c6-aop-aspect.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c7-spring-mybatis/c7-spring-mybatis.iml" filepath="$PROJECT_DIR$/../c7-spring-mybatis/c7-spring-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/../c8-spring-trans/c8-spring-trans.iml" filepath="$PROJECT_DIR$/../c8-spring-trans/c8-spring-trans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../c9-spring-trans-anno/c9-spring-trans-anno.iml" filepath="$PROJECT_DIR$/../c9-spring-trans-anno/c9-spring-trans-anno.iml" />
     </modules>
   </component>
 </project>

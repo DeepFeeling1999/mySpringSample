@@ -4,19 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!--settings控制全局行为-->
-    <settings>
-        <!--设置mybatis输出日志-->
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
-    </settings>
+
 
     <!--设置别名-->
     <typeAliases>
         <package name="org.example.domain"/>
     </typeAliases>
 
-    <!--sql mapper （sql 映射文件）的位置-->
-    <mappers>
-        <!--name 是包名，这个包中的所有mapper.xml一次都能加载-->
-        <package name="org.example.dao"/>
-    </mappers>
+<!--    &lt;!&ndash;sql mapper （sql 映射文件）的位置&ndash;&gt;-->
+<!--    <mappers>-->
+<!--        &lt;!&ndash;name 是包名，这个包中的所有mapper.xml一次都能加载&ndash;&gt;-->
+<!--        <package name="org.example.dao"/>-->
+<!--    </mappers>-->
 </configuration>

@@ -10,8 +10,12 @@
         在spring的配置文件中要指定其他文件的位置，需要使用classpath
     -->
     <!--<import resource="classpath:ba06/SpringSchool.xml"/>
-    <import resource="classpath:ba06/SpringStudent.xml"/>-->
+    <import resource="classpath:ba06/SpringStudent.xml"/>
+    -->
 
+
+    <!--通配符加载时，不能自加载
+    必须放在同一级目录中-->
     <import resource="classpath:ba06/Spring*xml"/>
 
 </beans>
