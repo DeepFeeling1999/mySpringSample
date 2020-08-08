@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC " -//mybatis.org//DTD config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--settings控制全局行为-->
+
+
+    <!--设置别名-->
+    <typeAliases>
+        <package name="org.example.domain"/>
+    </typeAliases>
+
+<!--    &lt;!&ndash;sql mapper （sql 映射文件）的位置&ndash;&gt;-->
+<!--    <mappers>-->
+<!--        &lt;!&ndash;name 是包名，这个包中的所有mapper.xml一次都能加载&ndash;&gt;-->
+<!--        <package name="org.example.dao"/>-->
+<!--    </mappers>-->
+</configuration>

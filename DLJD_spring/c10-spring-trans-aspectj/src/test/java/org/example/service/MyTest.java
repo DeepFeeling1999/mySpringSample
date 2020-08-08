@@ -12,6 +12,7 @@ public class MyTest {
         ApplicationContext ac=new ClassPathXmlApplicationContext(config);
 
         BuyGoodsService service= (BuyGoodsService) ac.getBean("buyGoodsService");
+        System.out.println("service是代理"+service.getClass().getName());;
         service.buy(1001,1);
     }
 }
