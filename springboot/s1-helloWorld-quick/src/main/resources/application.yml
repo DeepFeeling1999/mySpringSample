@@ -1,0 +1,32 @@
+#server:
+#  port: 8080
+#
+#person:
+#  lastName: sss
+#  age: 33
+#  boss: true
+#  birth: 2020/8/8
+#  maps: {k1: v1,k2: v2}
+#  lists:
+#    - lisi
+#    - zhaoliu
+#    - 999
+#  dog:
+#    name: 小狗
+#    age: 2
+
+spring:
+  profiles:
+    active: dev2
+server:
+  port: 8080
+---
+server:
+  port: 8081
+spring:
+  profiles: dev2
+---
+server:
+  port: 8082
+spring:
+  profiles: dev3
