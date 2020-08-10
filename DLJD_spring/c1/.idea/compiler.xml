@@ -22,7 +22,7 @@
       <module name="c-spring-trans-anno" target="1.8" />
       <module name="c1" target="1.8" />
       <module name="c10-spring-trans-aspectj" target="1.8" />
-      <module name="c11-spring-web" target="1.7" />
+      <module name="c11-spring-web" target="1.8" />
       <module name="c2_di_xml" target="1.8" />
       <module name="c3" target="1.8" />
       <module name="c4-di-anno" target="1.8" />
