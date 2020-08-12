@@ -1,0 +1,36 @@
+读取静态资源
+默认是在resources根目录下可以有三个子文件夹存放
+优先级从高到底为resource（子目录）->static->public
+
+在源码中会优先检查是否有自定义的目录位置
+//一般不会主动定义静态资源位置
+
+
+变量${}
+选择*{}
+文本消息使用#{}
+链接使用@{}
+
+所有的HTML元素，都可以通过th:来使用thymeleaf来替代
+
+<h3 th:each="u:${users}" th:text="${u}"></h3>
+
+添加@Configuration可以成为配置类
+然后实现WebMvcConfigurer则可以成为他的配置类
+
+
+
+扩展springMVC
+@Configuration
+public class MyConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/lll").setViewName("test");
+    }
+}
+
+但是不能加上@EnableWebMvc
+
+
+在springboot中有非常多的配置类xxxConfiguration
