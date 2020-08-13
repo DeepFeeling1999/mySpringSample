@@ -34,3 +34,10 @@ public class MyConfig implements WebMvcConfigurer {
 
 
 在springboot中有非常多的配置类xxxConfiguration
+
+
+thymeleaf使用链接
+<link th:href="@{/css/signin.css}" rel="stylesheet">
+
+
+扩展MVC部分看config包，实现国际化看index.html传参，然后通过区域解析器获取后创建区域对象
