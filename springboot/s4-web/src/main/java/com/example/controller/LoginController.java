@@ -15,22 +15,22 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
+    /**
+     * 处理登入请求
+     */
     @RequestMapping("/user/login")
-    public String login(
-            @RequestParam("myUserName") String uName,
+    public String login(@RequestParam("myUserName") String uName,
             @RequestParam("myPassword") String password,
             Model model, HttpSession session) {
 
-
         if (!StringUtils.isEmpty(uName) && "666".equals(password)) {
 
-            session.setAttribute("loginUser",uName);
-            System.out.println(session);
+            //增加一个属性记录，可以用来作为拦截判断，以及后续信息展示
+            session.setAttribute("loginUser", uName);
             return "redirect:/main.html";
-        }else{
-            model.addAttribute("msg","用户名或者密码错误");
+        } else {
+            model.addAttribute("msg", "用户名或者密码错误");
             return "index";
         }
-
     }
 }

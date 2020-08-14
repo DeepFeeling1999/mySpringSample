@@ -2,6 +2,7 @@ package com.example.dao;
 
 import com.example.domain.Department;
 import com.example.domain.Employee;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
@@ -12,6 +13,7 @@ import java.util.Map;
 /**
  * @author dell
  */
+@Repository
 public class EmployeeDao {
     private static Map<Integer, Employee> employees = null;
 

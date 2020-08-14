@@ -20,7 +20,10 @@
 
 
 
+
+
 扩展springMVC
+
 @Configuration
 public class MyConfig implements WebMvcConfigurer {
 
@@ -41,3 +44,10 @@ thymeleaf使用链接
 
 
 扩展MVC部分看config包，实现国际化看index.html传参，然后通过区域解析器获取后创建区域对象
+
+通过th:fragment=""指定重用代码块
+<nav class="col-md-2 d-none d-md-block bg-light sidebar" th:fragment="sidbar">
+thymeleaf用th:insert="~{}"插入
+<div th:insert="~{dashboard::sidbar}"></div>
+
+
