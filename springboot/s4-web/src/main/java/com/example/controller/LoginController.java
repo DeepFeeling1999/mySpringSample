@@ -27,7 +27,8 @@ public class LoginController {
 
             //增加一个属性记录，可以用来作为拦截判断，以及后续信息展示
             session.setAttribute("loginUser", uName);
-            return "redirect:/main.html";
+            //重定向至main页面，然后通过自定义ViewController使main路径实际上跳转到index页面
+            return "redirect:/main";
         } else {
             model.addAttribute("msg", "用户名或者密码错误");
             return "index";

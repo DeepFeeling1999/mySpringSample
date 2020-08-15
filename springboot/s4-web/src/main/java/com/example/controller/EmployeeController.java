@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Collection;
 
+/**
+ * @author dell
+ */
 @Controller
 public class EmployeeController {
 
@@ -22,10 +25,10 @@ public class EmployeeController {
     /**
      * 需要返回给前端，所以添加model
      */
-    @RequestMapping("/employees")
+    @RequestMapping("/urlEmployees")
     public String list(Model model){
         Collection<Employee> employees= employeeDao.getEmployees();
         model.addAttribute("myEmployees",employees);
-        return "list.html";
+        return "list";
     }
 }
