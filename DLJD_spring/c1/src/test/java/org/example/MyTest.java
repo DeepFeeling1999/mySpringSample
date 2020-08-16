@@ -1,9 +1,7 @@
 package org.example;
 
-import org.example.impl.someServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
@@ -11,14 +9,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 
-@ContextConfiguration(locations = {"classpath:beans.xml"})
-@RunWith(value = SpringJUnit4ClassRunner.class)
 public class MyTest {
-    @Autowired
-    ApplicationContext ac;
+
     @Test
     public void test01(){
-        System.out.println(ac);
+
     }
 
     /**
@@ -26,8 +21,6 @@ public class MyTest {
      * 会创建容器时，创建配置文件中的所有的对象
      * 默认调用无参构造方法
      */
-
-
     @Test
     public void test02(){
         //使用spring容器创建对象
@@ -38,14 +31,14 @@ public class MyTest {
         //表示从类
         ApplicationContext ac=new ClassPathXmlApplicationContext(myConfig);
 
-        boolean t=ac.containsBean("666");
+
 
         //从容器中获取某个对象，要调用对象的方法
         //getBean("配置中的bean的id值")
-        //someService service=(someService) ac.getBean("b1");
+        someService service=(someService) ac.getBean("someServiceImpl");
 
         //使用spring创建好的对象
-        //service.doSome();
+        service.doSome();
     }
 
     /**

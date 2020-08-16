@@ -2,8 +2,11 @@ package org.example.impl;
 
 import org.example.someService;
 
-public class someServiceImpl implements someService {
-    public someServiceImpl(){
+/**
+ * @author dell
+ */
+public class SomeServiceImpl implements someService {
+    public SomeServiceImpl(){
         System.out.println("构造方法");
     }
     @Override

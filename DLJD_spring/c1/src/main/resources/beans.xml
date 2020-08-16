@@ -15,8 +15,8 @@
            如map.put("b1",new SomeServiceImpl());
            一个bean标签声明一个对象。
     -->
-    <bean id="b1" class="org.example.impl.someServiceImpl"/>
-    <bean id="b2" class="org.example.impl.someServiceImpl"/>
+    <bean id="b1" class="org.example.impl.SomeServiceImpl"/>
+    <bean id="b2" class="org.example.impl.SomeServiceImpl"/>
 
     <!--
     spring 能创建一个非自定义的类的对象

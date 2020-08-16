@@ -29,7 +29,7 @@ public class MyConfig implements WebMvcConfigurer {
      * 添加一个解析组件
      */
     @Bean
-    public LocaleResolver localeResolver(){
+    public LocaleResolver tttlocaleResolver(){
         return new MyLocaleResolver();
     }
 
@@ -37,7 +37,7 @@ public class MyConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/index.html","/","/user/login","/css/**","/js/**","/img/**");
+                .excludePathPatterns("/index","/","/user/login","/css/**","/js/**","/img/**");
 
     }
 }

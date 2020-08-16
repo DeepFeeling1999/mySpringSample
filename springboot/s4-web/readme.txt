@@ -20,8 +20,6 @@
 
 
 
-
-
 扩展springMVC
 
 @Configuration
@@ -33,7 +31,7 @@ public class MyConfig implements WebMvcConfigurer {
     }
 }
 
-但是不能加上@EnableWebMvc
+但是不能加上@EnableWebMvc，
 
 
 在springboot中有非常多的配置类xxxConfiguration
@@ -50,4 +48,4 @@ thymeleaf使用链接
 thymeleaf用th:insert="~{}"插入
 <div th:insert="~{dashboard::sidbar}"></div>
 
-
+在spring-boot-starter-parent里找spring-boot-dependencies，点进去可以找到所有的默认依赖版本

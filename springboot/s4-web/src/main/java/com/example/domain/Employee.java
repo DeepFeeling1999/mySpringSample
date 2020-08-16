@@ -35,12 +35,5 @@ public class Employee {
         this.department = department;
         this.date=new Date();
     }
-    public Employee(String lastName, String email, Integer gender, Department department) {
-        this.id = null;
-        this.lastName = lastName;
-        this.email = email;
-        this.gender = gender;
-        this.department = department;
-        this.date=new Date();
-    }
+
 }

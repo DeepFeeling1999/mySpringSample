@@ -2,6 +2,7 @@ package com.example.dao;
 
 import com.example.domain.Department;
 import com.example.domain.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
@@ -16,6 +17,7 @@ import java.util.Map;
 @Repository
 public class EmployeeDao {
     private static Map<Integer, Employee> employees = null;
+    private final DepartmentDao departmentDao;
 
     static {
         employees = new HashMap<>();
@@ -28,11 +30,16 @@ public class EmployeeDao {
 
     private static Integer initId = 3;
 
+    @Autowired
+    public EmployeeDao(DepartmentDao departmentDao) {this.departmentDao = departmentDao;}
+
     /**
      * 增加员工，id主键自增
      */
     public boolean addEmployee(Employee employee) {
-        employee.setId(initId++);
+
+        employee.setId(++initId);
+        employee.setDepartment(departmentDao.getDepartment(employee.getDepartment().getId()));
         employees.put(initId, employee);
         return true;
     }

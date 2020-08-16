@@ -54,37 +54,41 @@
 
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <h2><a class="btn btn-sm btn-success" th:href="@{/addEmployee}">添加员工</a></h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>lastName</th>
-                        <th>email</th>
-                        <th>gender</th>
-                        <th>department</th>
-                        <th>date</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="employee:${myEmployees}">
-                        <td th:text="${employee.getId()}"></td>
-                        <td th:text="${employee.getLastName()}"></td>
-                        <td th:text="${employee.getEmail()}"></td>
-                        <td th:text="${employee.getGender()==0?'女':'男'}"></td>
-                        <td th:text="${employee.getDepartment().getDepartmentName()}"></td>
-                        <td th:text="${#dates.setFormat(employee.getDate(),'yyyy-MM-dd')}"></td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" th:href="@{/employee/}+${employee.getId()}">编辑</a>
-                            <button class="btn btn-sm btn-danger">删除</button>
-                        </td>
-                    </tr>
-                    </tbody>
 
-                </table>
-            </div>
+            <form th:action="@{postEmployee}" method="post">
+                <div class="form-group">
+                    <label>LastName</label>
+                    <input type="text" class="form-control" name="lastName" placeholder="海绵宝宝">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="1176244270@qq.com">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="1">
+                        <label class="form-check-label">男</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="0">
+                        <label class="form-check-label">女</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>department</label>
+                    <select class="form-control" name="department.id">
+                        <option th:each="dept:${myDepartments}" th:text="${dept.getDepartmentName()}" th:value="${dept.getId()}"></option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Birth</label>
+                    <input type="text" class="form-control" name="date" placeholder="嘤嘤嘤">
+                </div>
+                <button type="submit" class="btn btn-primary">添加
+                </button>
+            </form>
         </main>
     </div>
 </div>

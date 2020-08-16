@@ -54,37 +54,62 @@
 
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <h2><a class="btn btn-sm btn-success" th:href="@{/addEmployee}">添加员工</a></h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>lastName</th>
-                        <th>email</th>
-                        <th>gender</th>
-                        <th>department</th>
-                        <th>date</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="employee:${myEmployees}">
-                        <td th:text="${employee.getId()}"></td>
-                        <td th:text="${employee.getLastName()}"></td>
-                        <td th:text="${employee.getEmail()}"></td>
-                        <td th:text="${employee.getGender()==0?'女':'男'}"></td>
-                        <td th:text="${employee.getDepartment().getDepartmentName()}"></td>
-                        <td th:text="${#dates.setFormat(employee.getDate(),'yyyy-MM-dd')}"></td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" th:href="@{/employee/}+${employee.getId()}">编辑</a>
-                            <button class="btn btn-sm btn-danger">删除</button>
-                        </td>
-                    </tr>
-                    </tbody>
 
-                </table>
-            </div>
+            <form th:action="@{/updateEmployee}" method="post">
+                <input type="hidden" name="id" th:value="${aEmployee.getId()}">
+                <div class="form-group">
+                    <label>LastName</label>
+                    <label>
+                        <input th:value="${aEmployee.getLastName()}" type="text" class="form-control" name="lastName"
+                               placeholder="海绵宝宝">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <label>
+                        <input th:value="${aEmployee.getEmail()}" type="email" class="form-control" name="email"
+                               placeholder="1176244270@qq.com">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Gender</label><br>
+                    <div class="form-check form-check-inline">
+                        <label>
+                            <input th:checked="${aEmployee.getGender()==1}" class="form-check-input" type="radio"
+                                   name="gender" value="1">
+                        </label>
+                        <label class="form-check-label">男</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label>
+                            <input th:checked="${aEmployee.getGender()==0}" class="form-check-input" type="radio"
+                                   name="gender" value="0">
+                        </label>
+                        <label class="form-check-label">女</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>department</label>
+                    <label>
+                        <select class="form-control" name="department.id">
+                            <option th:selected="${dept.getId()==aEmployee.getDepartment().getId()}"
+                                    th:each="dept:${aDepartments}"
+                                    th:text="${dept.getDepartmentName()}"
+                                    th:value="${dept.getId()}">
+                            </option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Birth</label>
+                    <label>
+                        <input th:value="${#dates.format(aEmployee.getDate(),'yyyy-MM-dd')}" type="text" class="form-control" name="date"
+                               placeholder="嘤嘤嘤">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">添加
+                </button>
+            </form>
         </main>
     </div>
 </div>
