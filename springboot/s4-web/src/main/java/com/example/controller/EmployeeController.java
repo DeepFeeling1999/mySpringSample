@@ -21,7 +21,6 @@ import java.util.PriorityQueue;
 @Controller
 public class EmployeeController {
 
-
     private final EmployeeDao employeeDao;
     private final DepartmentDao departmentDao;
     @Autowired
@@ -48,6 +47,11 @@ public class EmployeeController {
         return "employee/add";
     }
 
+    /**
+     * 增加员工
+     * @param employee 需要增加的员工
+     * @return 跳转到信息页
+     */
     @PostMapping("/postEmployee")
     public String postAdd(Employee employee){
         System.out.println(employee);
@@ -61,7 +65,7 @@ public class EmployeeController {
     /**
      * 跳转到员工信息修改页面
      */
-    @GetMapping("/employee/{id}")
+    @GetMapping("/EditEmployee/{id}")
     public String updateEmployee(@PathVariable("id")Integer id, Model model){
         Employee employee=employeeDao.getEmployee(id);
         model.addAttribute("aEmployee",employee);
@@ -73,9 +77,14 @@ public class EmployeeController {
     }
 
     @PostMapping("/updateEmployee")
-    public String updateEmployee(Employee employee){
-        System.out.println(employee);
-        employeeDao.addEmployee(employee);
+    public String updateEmployee(Employee employee) throws CloneNotSupportedException {
+        employeeDao.updateEmployee(employee);
+        return "redirect:/urlEmployees";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable("id") int id) {
+        employeeDao.delete(id);
         return "redirect:/urlEmployees";
     }
 }

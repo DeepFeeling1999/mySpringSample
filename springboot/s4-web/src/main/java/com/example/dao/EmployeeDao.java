@@ -36,12 +36,13 @@ public class EmployeeDao {
     /**
      * 增加员工，id主键自增
      */
-    public boolean addEmployee(Employee employee) {
+    public void addEmployee(Employee employee) {
+        if(employee.getId()==null){
+            employee.setId(++initId);
+        }
 
-        employee.setId(++initId);
         employee.setDepartment(departmentDao.getDepartment(employee.getDepartment().getId()));
-        employees.put(initId, employee);
-        return true;
+        employees.put(employee.getId(), employee);
     }
 
     /**
@@ -63,5 +64,13 @@ public class EmployeeDao {
      */
     public Employee getEmployee(Integer id) {
         return employees.get(id);
+    }
+
+    /**
+     * 新增
+     */
+    public void updateEmployee(Employee employee) throws CloneNotSupportedException {
+        delete(employee.getId());
+        addEmployee(employee);
     }
 }
