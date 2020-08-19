@@ -25,9 +25,6 @@ public class JdbcController {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    //@ResponseBody
-    //@RequestMapping("/userList")
-
     @GetMapping("/userList")
     public List<Map<String, Object>> hello() {
         String sql = "select * from goods";
