@@ -15,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Employee {
     private Integer id;
-    private String lastName;
+    private String employeeName;
     private String email;
 
     /**
@@ -26,9 +26,9 @@ public class Employee {
     private Department department;
     private Date date;
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department) {
+    public Employee(Integer id, String employeeName, String email, Integer gender, Department department) {
         this.id = id;
-        this.lastName = lastName;
+        this.employeeName = employeeName;
         this.email = email;
         this.gender = gender;
         this.department = department;

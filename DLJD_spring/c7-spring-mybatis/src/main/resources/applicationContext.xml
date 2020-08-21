@@ -16,7 +16,7 @@
         后面的属性都是class="com.alibaba.druid.pool.DruidDataSource"
         这个类中的set方法
         使用属性配置文件中的数据的话，语法为${}
-        -->
+    -->
     <bean id="myDataSource" class="com.alibaba.druid.pool.DruidDataSource"
     init-method="init" destroy-method="close">
         <!--用set注入DruidDataSource提供链接数据库信息-->

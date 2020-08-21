@@ -16,7 +16,7 @@ import java.util.Map;
  */
 @Repository
 public class EmployeeDao {
-    private static Map<Integer, Employee> employees = null;
+    private static Map<Integer, Employee> employees;
     private final DepartmentDao departmentDao;
 
     static {
